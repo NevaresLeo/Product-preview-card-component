@@ -1,0 +1,148 @@
+:root{
+    --dark-cyan: hsl(158, 36%, 37%);
+    --cream: hsl(30, 38%, 92%);
+    --dark-cyan-act: hsl(158, 36%, 21%);
+
+    --very-dark-blue: hsl(212, 21%, 14%);
+    --dark-grayish-blue: hsl(228, 12%, 48%);
+    --white: hsl(0, 0%, 100%);
+
+    --fonte-inter:'Inter', sans-serif;
+    --fonte-fraunces:'Fraunces', serif;
+}
+
+body{
+    background-color: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.principal{
+    background-color: var(--white);
+    border: transparent;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    margin: auto;
+    box-sizing: border-box;
+    height: 600px;
+    width: 800px;
+}
+
+
+.imagem{
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.texto{
+    padding: 5px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.texto__perfume{
+    color: var(--dark-grayish-blue);
+    font-family: var(--fonte-inter);
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1em;
+    font-size: 14px;
+}
+.texto__titulo{
+    font-family: var(--fonte-fraunces);
+    font-size: 48px;
+    line-height: 48px;
+}
+.texto__descricao{
+    color: var(--dark-grayish-blue);
+    font-family: var(--fonte-inter);
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 30px;
+}
+
+.texto__preco{
+    display: flex;
+    align-items: center;
+}
+.preco__grande{
+    color: var(--dark-cyan);
+    font-family: var(--fonte-fraunces);
+    font-size: 42px;
+    margin-right:  1em;
+}
+.preco__desconto{
+    color: var(--dark-grayish-blue);
+    font-family: var(--fonte-inter);
+    font-weight: 500;
+    text-decoration: line-through;
+}
+
+.texto__botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    font-family: var(--fonte-inter);
+    font-weight: 700;
+    background-color: var(--dark-cyan) ;
+    color: var(--white);
+    border-radius: 5px;
+    text-decoration: none;
+    width: 100%;
+    transition: all 0.2s ease-in-out;
+}
+.texto__botao i{
+    margin-right: 10px;
+}
+.texto__botao:hover{
+    transform: scale(1.05);
+    transition: all 0.2s ease-in-out;
+}
+.texto__botao:active{
+    background-color:var(--dark-cyan-act);
+}
+
+@media only screen and (max-width:500px){
+    body{
+        margin: 1em;
+    }
+    .principal{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .imagem{
+        object-fit:cover;
+        height: 250px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+    }
+    .texto{
+        padding: 3em 2em;
+        align-items: flex-start;
+    }
+    .texto__perfume{
+        padding-left: .5em;
+    }
+    .texto__titulo{
+        padding-top: .5em;
+        padding-bottom: .5em;
+    }
+    .texto__descricao,.texto__preco{
+        padding-bottom: 2em;
+    }
+}
